@@ -36,15 +36,23 @@ window.addEventListener('scroll', () => {
 function toggleNav() {
     const nav = document.getElementById("navbar");
     const menuIcon = document.querySelector(".menu-icon");
-
+    const hidden = document.querySelector(".side-nav")
     if (nav.style.width === "35%") {
         nav.style.width = "0";
         menuIcon.classList.remove("change");
     } else {
         nav.style.width = "35%";
         menuIcon.classList.add("change");
+
+    }
+    if (hidden.style.display == "none" || hidden.style.display == "") {
+        hidden.style.display = "block";
+    }
+    else {
+        hidden.style.display = "none";
     }
 }
+
 //slide bar
 const slides = document.querySelector('.slides');
 const images = document.querySelectorAll('.slides img');
@@ -108,5 +116,4 @@ function revealOnScroll() {
         }
     });
 }
-
 window.addEventListener("scroll", revealOnScroll);
